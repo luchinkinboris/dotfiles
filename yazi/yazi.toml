@@ -1,0 +1,8 @@
+[manager]
+show_hidden = true
+sort_dir_first = true
+
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
