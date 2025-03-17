@@ -23,9 +23,9 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
-
   require 'kickstart/plugins/which-key',
+
+  require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/telescope',
 
@@ -55,8 +55,6 @@ require('lazy').setup({
 
   require 'kickstart/plugins/catppuccin',
 
-  -- require 'kickstart/plugins/alpha',
-
   require 'kickstart/plugins/noice',
 
   require 'kickstart/plugins/markview',
@@ -69,16 +67,15 @@ require('lazy').setup({
 
   require 'kickstart/plugins/startify',
 
-  require 'kickstart/plugins/langmapper',
-
   require 'kickstart/plugins/moody',
-
-  require 'kickstart/plugins/in-and-out',
 
   require 'kickstart/plugins/commentary',
 
   require 'kickstart/plugins/yanky',
 
+  require 'kickstart/plugins/rsi',
+
+  require 'kickstart/plugins/langmapper',
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   --
   --  Here are some example plugins that I've included in the Kickstart repository.

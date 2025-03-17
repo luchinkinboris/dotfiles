@@ -49,8 +49,7 @@
   ],
 
   "modules-right": [
-
-    "hyprland/language",
+    "custom/language",
 
     "mpris",                // media info
 
@@ -102,7 +101,7 @@
       // Terminal
       "~": "  Terminal",
       "zsh": "  Terminal",
-      "kitty": "󰄛  Terminal",
+      "kitty": "  Terminal",
 
       // Browser
 
@@ -159,8 +158,6 @@
 
       // Social
 
-      "Telegram(.*)": 
-       "<span foreground='#6cb6eb'> </span> Telegram $1",
       "vesktop": 
         "<span foreground='#8caaee'> </span> Discord",
 
@@ -316,6 +313,14 @@
     "max-length": 1
   },
 
+  "custom/language": {
+    "exec" : "~/.config/scripts/layout-emoji.sh",
+    "format":"{}",
+    "interval": 1, // Интервал обновления (в секундах)
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next", // Действие при клике (переключение раскладки)
+    "tooltip" : false
+  },
+
   "mpris": {
     "format": "{player_icon} {title} - {artist}",
     "format-paused": "{status_icon} {title} - {artist}",
@@ -335,13 +340,6 @@
     "max-length": 35
   },
 
- "hyprland/language": {
-"font-family": "noto-fonts-emoji",
-"format-ru": "🇷🇺",
-
-"format-en": "🇺🇸",
-
-}, 
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 {volume}%",

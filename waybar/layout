@@ -1,0 +1,7 @@
+  "custom/language": {
+    "exec" : "~/.config/scripts/layout-emoji.sh",
+    "format":"{}",
+    "interval": 1, // Интервал обновления (в секундах)
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next", // Действие при клике (переключение раскладки)
+    "tooltip" : false
+  },
