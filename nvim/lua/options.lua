@@ -32,11 +32,10 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- vim.schedule(function()
 --vim.opt.clipboard = 'unnamedplus'
 -- end)
+vim.opt.conceallevel = 2
 vim.opt.clipboard = 'unnamedplus'
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- отмена подсветки поиска
-
-vim.opt.conceallevel = 2
 
 -- Кратковременная подсветка текста при копировании
 -- vim.api.nvim_create_autocmd('TextYankPost', {
@@ -139,3 +138,4 @@ vim.api.nvim_create_autocmd('ModeChanged', {
     end
   end,
 })
+vim.opt.conceallevel = 2
