@@ -1,4 +1,3 @@
-vim.opt.number = true -- показать номера строк
 vim.opt.relativenumber = true -- относительные номера строк
 vim.opt.cursorline = true -- показать на какой линии курсор
 vim.opt.scrolloff = 10 -- показ линий под и над курсором
@@ -17,12 +16,6 @@ vim.opt.smartcase = true
 -- открывать новые сплиты справа и снизу
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- переключение по ctrl+hjkl между сплитами
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- отображение значков для некоторых пробелов
 vim.opt.list = true
