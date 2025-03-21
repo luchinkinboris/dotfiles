@@ -107,6 +107,11 @@ return {
         }
       end, { desc = '[S]earch [/] in Open Files' })
 
+      -- Поиск в директории обсидиана
+      vim.keymap.set('n', '<leader>so', function()
+        builtin.find_files { cwd = '~/obsidian/obsidian/' }
+      end, { desc = '[S]earch [O]bsidian files' })
+
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
