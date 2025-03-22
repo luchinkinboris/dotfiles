@@ -7,6 +7,7 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	opts = {
+		disable_frontmatter = false,
 		note_id_func = function(title)
 			return title
 		end,
@@ -27,6 +28,7 @@ return {
 			time_format = "%H:%M", -- Формат времени (опционально)
 			default_template = "BasicTemplate.md", -- Шаблон по умолчанию
 		},
+
 		ui = {
 			checkboxes = {
 				[" "] = { char = "☐", hl_group = "ObsidianTodo" },
@@ -34,15 +36,6 @@ return {
 			},
 			enable = false,
 			disable_formatter = true,
-		},
-		keys = {
-			{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New Obsidian note", mode = "n" },
-			{ "<leader>oft", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New Obsidian note from template", mode = "n" },
-			{ "<leader>oo", "<cmd>ObsidianSearch<cr>", desc = "Search Obsidian notes", mode = "n" },
-			{ "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", desc = "Quick Switch", mode = "n" },
-			{ "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Show location list of backlinks", mode = "n" },
-			{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Follow link under cursor", mode = "n" },
-			{ "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste imate from clipboard under cursor", mode = "n" },
 		},
 	},
 

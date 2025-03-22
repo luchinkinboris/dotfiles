@@ -1,9 +1,9 @@
 vim.opt.relativenumber = true -- относительные номера строк
-vim.opt.cursorline = true     -- показать на какой линии курсор
-vim.opt.scrolloff = 10        -- показ линий под и над курсором
-vim.opt.breakindent = true    -- таб индентация
-vim.opt.undofile = true       -- история отмены
-vim.opt.signcolumn = 'yes'    -- включить колонку знаков слева от номера строк
+vim.opt.cursorline = true -- показать на какой линии курсор
+vim.opt.scrolloff = 10 -- показ линий под и над курсором
+vim.opt.breakindent = true -- таб индентация
+vim.opt.undofile = true -- история отмены
+vim.opt.signcolumn = "yes" -- включить колонку знаков слева от номера строк
 
 -- более отзывчивая скорость работы
 vim.opt.updatetime = 250
@@ -19,16 +19,16 @@ vim.opt.splitbelow = true
 
 -- отображение значков для некоторых пробелов
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- синхронизировать буфер vim с буфером ОС
 -- vim.schedule(function()
 --vim.opt.clipboard = 'unnamedplus'
 -- end)
 vim.opt.conceallevel = 2
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- отмена подсветки поиска
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- отмена подсветки поиска
 
 -- Кратковременная подсветка текста при копировании
 -- vim.api.nvim_create_autocmd('TextYankPost', {
@@ -55,31 +55,33 @@ local ru_shift = [[ËЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТ�
 vim.opt.langmap = vim.fn.join({
 	-- | `to` should be first     | `from` should be second
 	escape(ru_shift)
-	.. ';'
-	.. escape(en_shift),
-	escape(ru) .. ';' .. escape(en),
-}, ',')
+		.. ";"
+		.. escape(en_shift),
+	escape(ru) .. ";" .. escape(en),
+}, ",")
 
 -- Получить текущую раскладку клавиатуры
 function Get_current_layout()
-	local handle = io.popen "hyprctl devices | grep -A 10 'at-translated-set-2-keyboard' | grep 'active keymap' | awk -F ': ' '{print $2}'"
+	local handle = io.popen(
+		"hyprctl devices | grep -A 10 'at-translated-set-2-keyboard' | grep 'active keymap' | awk -F ': ' '{print $2}'"
+	)
 	if not handle then
 		return nil
 	end
-	local result = handle:read '*a'
+	local result = handle:read("*a")
 	handle:close()
-	return result:gsub('%s+', '') -- Убираем лишние пробелы и переносы строк
+	return result:gsub("%s+", "") -- Убираем лишние пробелы и переносы строк
 end
 
 -- Переключить раскладку клавиатуры
 function Toggle_layout()
-	os.execute 'hyprctl switchxkblayout at-translated-set-2-keyboard next > /dev/null 2>&1'
+	os.execute("hyprctl switchxkblayout at-translated-set-2-keyboard next > /dev/null 2>&1")
 end
 
 -- Установить английскую раскладку
 function Set_english_layout()
 	local layout = Get_current_layout()
-	if layout == 'Russian' then
+	if layout == "Russian" then
 		Toggle_layout()
 	end
 end
@@ -87,7 +89,7 @@ end
 -- Установить русскую раскладку
 function Set_russian_layout()
 	local layout = Get_current_layout()
-	if layout == 'English(US)' then
+	if layout == "English(US)" then
 		Toggle_layout()
 	end
 end
@@ -95,8 +97,8 @@ end
 local saved_layout = Get_current_layout()
 
 -- Установка английской раскладки при входе в командный режим
-vim.api.nvim_create_autocmd('CmdlineEnter', {
-	pattern = '*',
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	pattern = "*",
 	callback = function()
 		saved_layout = Get_current_layout()
 		Set_english_layout()
@@ -104,18 +106,18 @@ vim.api.nvim_create_autocmd('CmdlineEnter', {
 })
 
 -- Возвращние сохраненной расскладки при выходе из командного режима
-vim.api.nvim_create_autocmd('CmdlineLeave', {
-	pattern = '*',
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	pattern = "*",
 	callback = function()
-		if saved_layout == 'Russian' then
+		if saved_layout == "Russian" then
 			Set_russian_layout()
 		end
 	end,
 })
 
 --Переключение на английскую раскладку при входе в визуальный режим
-vim.api.nvim_create_autocmd('ModeChanged', {
-	pattern = '*:[vV\x16]',
+vim.api.nvim_create_autocmd("ModeChanged", {
+	pattern = "*:[vV\x16]",
 	callback = function()
 		saved_layout = Get_current_layout()
 		Set_english_layout()
@@ -123,10 +125,10 @@ vim.api.nvim_create_autocmd('ModeChanged', {
 })
 
 -- Возвращение сохраненной раскладки при выходе из визуального режима
-vim.api.nvim_create_autocmd('ModeChanged', {
-	pattern = '[vV\x16]:*',
+vim.api.nvim_create_autocmd("ModeChanged", {
+	pattern = "[vV\x16]:*",
 	callback = function()
-		if saved_layout == 'Russian' then
+		if saved_layout == "Russian" then
 			Set_russian_layout()
 		end
 	end,

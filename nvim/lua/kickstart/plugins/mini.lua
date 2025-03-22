@@ -29,6 +29,7 @@ return {
 					i = { input = { "*", "*" }, output = { left = "*", right = "*" } }, -- Курсив
 					c = { input = { "`", "`" }, output = { left = "`", right = "`" } }, -- Код
 					l = { input = { "[[", "]]" }, output = { left = "[[", right = "]]" } }, -- ссылка
+					h = { input = { "==", "==" }, output = { left = "==", right = "==" } }, -- хайлайт
 				},
 				search_method = "cover",
 			})
@@ -53,8 +54,8 @@ return {
 			-- Подключение mini.clue
 			require("mini.clue").setup({
 				triggers = {
-					mode = "n",
-					keys = "<C-i>",
+					mode = "i",
+					keys = "<C>",
 				},
 
 				clues = { -- Триггеры для режима вставки (Insert mode)
