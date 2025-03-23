@@ -133,3 +133,14 @@ vim.api.nvim_create_autocmd("ModeChanged", {
 		end
 	end,
 })
+
+-- Применение шаблонов ко всем файлам md в Obsidian
+vim.api.nvim_create_autocmd("BufNewFile", {
+	pattern = "~/obsidian/**/*.md",
+	callback = function()
+		vim.schedule(function()
+			vim.api.nvim_buf_set_lines(0, 0, -1, false, {})
+			vim.cmd("ObsidianTemplate")
+		end)
+	end,
+})

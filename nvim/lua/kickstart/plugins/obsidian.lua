@@ -1,7 +1,7 @@
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*",
-	lazy = true,
+	lazy = false,
 	ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -26,7 +26,6 @@ return {
 			subdir = "/home/brslv/obsidian/obsidian/!Templates", -- Путь к папке с шаблонами
 			date_format = "%d-%m-%Y", -- Формат даты
 			time_format = "%H:%M", -- Формат времени (опционально)
-			default_template = "BasicTemplate.md", -- Шаблон по умолчанию
 		},
 
 		ui = {

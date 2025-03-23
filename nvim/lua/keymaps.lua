@@ -24,7 +24,6 @@ vim.keymap.set("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "[O]bsidia
 vim.keymap.set("n", "<leader>oc", "<cmd>ObsidianTOC<cr>", { desc = "[O]bsidian [C]ontent" })
 
 --Yanky
-
 vim.keymap.set("n", "p", "<Plug>(YankyPutAfter)")
 vim.keymap.set("n", "P", "<Plug>(YankyPutBefore)")
 vim.keymap.set("n", "gp", "<Plug>(YankyGPutAfter)")
