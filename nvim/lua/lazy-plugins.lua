@@ -64,6 +64,8 @@ require("lazy").setup({
 	require("kickstart/plugins/bullets"),
 
 	require("kickstart/plugins/stay-centered"),
+
+	require("kickstart/plugins/highlighturl"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
