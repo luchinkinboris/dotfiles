@@ -49,8 +49,6 @@ require("lazy").setup({
 
 	require("kickstart/plugins/yanky"),
 
-	require("kickstart/plugins/rsi"),
-
 	require("kickstart/plugins/langmapper"),
 
 	require("kickstart.plugins.indent_line"),
@@ -61,11 +59,13 @@ require("lazy").setup({
 
 	require("kickstart/plugins/blink"),
 
-	require("kickstart/plugins/bullets"),
+	-- require("kickstart/plugins/bullets"),
 
 	require("kickstart/plugins/stay-centered"),
 
 	require("kickstart/plugins/highlighturl"),
+
+	require("kickstart/plugins/rsi"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
