@@ -53,18 +53,18 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 	end,
 })
 
---Переключение на английскую раскладку при входе в визуальный режим
+--Переключение на английскую раскладку при входе в визуальный или нормальный режим
 vim.api.nvim_create_autocmd("ModeChanged", {
-	pattern = "*:[vV\x16]",
+	pattern = { "*:n", "*:[vV\x16]" },
 	callback = function()
 		saved_layout = Get_current_layout()
 		Set_english_layout()
 	end,
 })
 
--- Возвращение сохраненной раскладки при выходе из визуального режима
+-- Возвращение сохраненной раскладки при выходе из визуального или нормального режима
 vim.api.nvim_create_autocmd("ModeChanged", {
-	pattern = "[vV\x16]:*",
+	pattern = { "[vV\x16]:*", "n:*" },
 	callback = function()
 		if saved_layout == "Russian" then
 			Set_russian_layout()
