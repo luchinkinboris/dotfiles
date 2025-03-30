@@ -25,15 +25,15 @@ require("lazy").setup({
 
 	require("kickstart/plugins/neoscroll"),
 
-	-- require 'kickstart/plugins/render-markdown',
+	-- require("kickstart/plugins/render-markdown"),
+
+	require("kickstart/plugins/markview"),
 
 	require("kickstart/plugins/scrollbar"),
 
 	require("kickstart/plugins/catppuccin"),
 
 	require("kickstart/plugins/noice"),
-
-	require("kickstart/plugins/markview"),
 
 	require("kickstart/plugins/hardtime"),
 
