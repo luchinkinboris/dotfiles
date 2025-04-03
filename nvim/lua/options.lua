@@ -27,7 +27,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- end)
 vim.opt.conceallevel = 2
 vim.opt.clipboard = "unnamedplus"
-
+vim.opt_local.foldlevel = 2 -- Уровень фолдинга 2 (показывает заголовки до ##)
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- отмена подсветки поиска
 
 -- Кратковременная подсветка текста при копировании
